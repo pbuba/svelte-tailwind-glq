@@ -20,5 +20,9 @@
     "tslib": "^2.2.0",
     "typescript": "^4.3.2",
     "vite": "^2.4.4"
+  },
+  "dependencies": {
+    "@urql/svelte": "^1.3.0",
+    "graphql": "^15.5.1"
   }
 }
