@@ -1,8 +1,16 @@
 <script lang="ts">
   import TailwindCss from "./TailwindCSS.svelte";
+  import Main from "./Main.svelte";
+
+  import { initClient, operationStore, query } from "@urql/svelte";
+
+  initClient({
+    url: "https://graphqlzero.almansi.me/api",
+  });
 </script>
 
 <TailwindCss />
+<Main />
 
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
