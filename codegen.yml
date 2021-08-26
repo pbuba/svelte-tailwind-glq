@@ -1,0 +1,9 @@
+schema: https://graphqlzero.almansi.me/api
+documents: ./src/**/queries.ts
+generates:
+  ./src/types.d.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-urql:
+          withHooks: false

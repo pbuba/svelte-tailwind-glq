@@ -3,9 +3,8 @@
   import ThemeButton from "./ThemeButton.svelte";
 </script>
 
-<header class="text-gray-600 body-font container mx-auto">
-  <div class="shadow-xl">
-    <span class="text-xl">Posts</span>
+<header class="text-gray-600 body-font">
+  <div class="container mx-auto">
     <nav
       class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center"
     >
