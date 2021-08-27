@@ -1,7 +1,10 @@
-<script>
-  import Card from "./Card.svelte";
+<script lang="ts">
+  import type { Readable } from "svelte/store";
+  import type { OperationStore } from "@urql/svelte";
 
-  export let albums;
+  import Card from "./Card.svelte";
+  import type * as types from "../types";
+  export let albums: Readable<OperationStore<types.GetAlbumsQuery>>;
 </script>
 
 {#if $albums.fetching}

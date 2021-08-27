@@ -3,11 +3,8 @@
   import * as types from "../types.d";
   import CardList from "./CardList.svelte";
 
-  const albums = operationStore<types.SomeAlbumFragment>(
-    types.GetAlbumsDocument
-  );
+  const albums = operationStore<types.GetAlbumsQuery>(types.GetAlbumsDocument);
   query(albums);
-
   const user = operationStore(types.GetFirstUserDocument);
   query(user);
 </script>
