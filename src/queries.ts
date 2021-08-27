@@ -23,6 +23,16 @@ query getAlbums (
 }
 `;
 
+export const createAlbum = gql`
+  mutation createAlbum (
+    $input: CreateAlbumInput!
+  ) {
+    createAlbum(input: $input) {
+      title
+    }
+  }
+`;
+
 export const getFirstUser = gql`
 query getFirstUser {
   user(id: 1) {

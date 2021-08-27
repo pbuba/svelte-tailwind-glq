@@ -532,6 +532,13 @@ export type GetAlbumsQueryVariables = Exact<{
 
 export type GetAlbumsQuery = { __typename?: 'Query', albums?: Maybe<{ __typename?: 'AlbumsPage', data?: Maybe<Array<Maybe<{ __typename?: 'Album', id?: Maybe<string>, title?: Maybe<string>, photos?: Maybe<{ __typename?: 'PhotosPage', data?: Maybe<Array<Maybe<{ __typename?: 'Photo', id?: Maybe<string>, url?: Maybe<string>, title?: Maybe<string> }>>> }> }>>> }> };
 
+export type CreateAlbumMutationVariables = Exact<{
+  input: CreateAlbumInput;
+}>;
+
+
+export type CreateAlbumMutation = { __typename?: 'Mutation', createAlbum?: Maybe<{ __typename?: 'Album', title?: Maybe<string> }> };
+
 export type GetFirstUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -559,6 +566,13 @@ export const GetAlbumsDocument = gql`
   }
 }
     ${SomeAlbumFragmentDoc}`;
+export const CreateAlbumDocument = gql`
+    mutation createAlbum($input: CreateAlbumInput!) {
+  createAlbum(input: $input) {
+    title
+  }
+}
+    `;
 export const GetFirstUserDocument = gql`
     query getFirstUser {
   user(id: 1) {

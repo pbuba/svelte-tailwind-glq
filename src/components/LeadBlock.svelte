@@ -1,4 +1,10 @@
-<div class="bg-gray-100 grid lg:grid-cols-2 2xl:grid-cols-5">
+<script>
+  import Modal from "./Modal.svelte";
+</script>
+
+<div
+  class="bg-gray-100 dark:bg-gray-600 dark:text-gray-50 text-gray-900 grid lg:grid-cols-2 2xl:grid-cols-5"
+>
   <div
     class="
       px-8 py-12 max-w-md mx-auto 
@@ -12,23 +18,20 @@
       <img
         class="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden"
         src="/src/assets/foto.jpeg"
-        alt="Woman workcationing on the beach"
+        alt="Karelia"
       />
       <h1
-        class="mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl"
+        class="mt-6 text-2xl font-bold sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl"
       >
         Lorem ipsum dolor sit amet.
         <span class="text-indigo-500">Lorem, ipsum dolor.</span>
       </h1>
-      <p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl">
+      <p class="mt-2 sm:mt-4 sm:text-xl">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim veniam, ad
         atque vero animi ullam.
       </p>
       <div class="mt-4 space-x-1 space-x-1 sm:mt-6">
-        <a
-          class="btn btn-primary shadow-lg transform transition hover:-translate-y-0.5"
-          href="#">Lorem, ipsum dolor.</a
-        >
+        <Modal />
         <a class="btn btn-secondary" href="#">Lorem</a>
       </div>
     </div>
