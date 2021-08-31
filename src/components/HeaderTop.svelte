@@ -13,7 +13,7 @@
   <div class="grid grid-cols-auto-1fr gap-x-2 z-10">
     <img
       class="w-10 sm:row-span-2"
-      src="/src/assets/svelte-logo.svg"
+      src="/img/svelte-logo.svg"
       width="40"
       height="40"
       alt="logo"

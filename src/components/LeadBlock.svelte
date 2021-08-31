@@ -17,7 +17,7 @@
       <p class="text-5xl lg:text-3xl">Karelia</p>
       <img
         class="mt-6 rounded-lg shadow-xl sm:mt-8 sm:h-64 sm:w-full sm:object-cover object-center lg:hidden"
-        src="/src/assets/foto.jpeg"
+        src="/img/foto.jpeg"
         alt="Karelia"
       />
       <h1
@@ -39,7 +39,7 @@
   <div class="hidden relative lg:block 2xl:col-span-3">
     <img
       class="absolute inset-0 w-full h-full object-cover object-center"
-      src="/src/assets/foto.jpeg"
+      src="/img/foto.jpeg"
       alt="Forest"
     />
   </div>
