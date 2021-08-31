@@ -19,21 +19,27 @@
     types.CreateAlbumInput,
     types.CreateAlbumMutationVariables
   >(types.CreateAlbumDocument);
+  let loading;
 
   const createAlbumMutation = mutation(createAlbums);
 
-  function updateAlbum(newTitle: string) {
-    createAlbumMutation({ input: { title: newTitle, userId: String(userId) } });
-  }
+  const updateAlbum = async (newTitle: string) => {
+    loading = true;
+    await createAlbumMutation({
+      input: { title: newTitle, userId: String(userId) },
+    });
+    loading = false;
+
+    closeModal();
+  };
 
   const submitForm = () => {
     updateAlbum(title);
-    closeModal();
   };
 </script>
 
 <button
-  class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+  class="bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
   type="button"
   on:click={toggleModal}
 >
@@ -68,7 +74,7 @@
               bind:value={title}
               type="text"
               placeholder="TITLE"
-              class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
+              class="px-3 py-3 placeholder-blueGray-300 text-blueGray-600 dark:text-black relative bg-white rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full"
             />
           </div>
         </div>
@@ -84,11 +90,15 @@
             Close
           </button>
           <button
-            class="bg-emerald-500 dark:text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            class="disabled:opacity-50 bg-indigo-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="submit"
-            disabled={up}
+            disabled={loading}
           >
-            Create
+            {#if loading}
+              Loading...
+            {:else}
+              Create
+            {/if}
           </button>
         </div>
       </form>
