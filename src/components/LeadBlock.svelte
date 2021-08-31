@@ -30,7 +30,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim veniam, ad
         atque vero animi ullam.
       </p>
-      <div class="mt-4 space-x-1 space-x-1 sm:mt-6">
+      <div class="mt-4 space-x-1 sm:mt-6">
         <Modal />
         <a class="btn btn-secondary" href="#">Lorem</a>
       </div>

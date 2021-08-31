@@ -9,8 +9,8 @@
   };
 </script>
 
-<div class="w-full h-full">
-  <div class="flex items-center mt-4">
+<div>
+  <div class="flex items-center">
     <span class="">
       <svg
         class="h-6 w-6 text-gray-400"
